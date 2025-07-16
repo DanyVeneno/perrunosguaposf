@@ -9,7 +9,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView
+      component: HomeView,
     },
     {
       path: "/admin",
@@ -20,9 +20,9 @@ const router = createRouter({
         {
           path: "",
           name: "admin-appointments",
-          component: () => import("../views/admin/AppointmentsView.vue")
-        }
-      ]
+          component: () => import("../views/admin/AppointmentsView.vue"),
+        },
+      ],
     },
     {
       path: "/reservaciones",
@@ -34,7 +34,7 @@ const router = createRouter({
           path: "",
           name: "my-appointments",
           component: () =>
-            import("../views/appointments/MyAppointmentsView.vue")
+            import("../views/appointments/MyAppointmentsView.vue"),
         },
         {
           path: "nueva",
@@ -44,15 +44,15 @@ const router = createRouter({
             {
               path: "",
               name: "new-appointment",
-              component: () => import("../views/appointments/ServicesView.vue")
+              component: () => import("../views/appointments/ServicesView.vue"),
             },
             {
               path: "detalles",
               name: "appointment-details",
               component: () =>
-                import("../views/appointments/AppointmentView.vue")
-            }
-          ]
+                import("../views/appointments/AppointmentView.vue"),
+            },
+          ],
         },
         {
           path: ":id/editar",
@@ -62,17 +62,17 @@ const router = createRouter({
             {
               path: "",
               name: "edit-appointment",
-              component: () => import("../views/appointments/ServicesView.vue")
+              component: () => import("../views/appointments/ServicesView.vue"),
             },
             {
               path: "detalles",
               name: "edit-appointment-details",
               component: () =>
-                import("../views/appointments/AppointmentView.vue")
-            }
-          ]
-        }
-      ]
+                import("../views/appointments/AppointmentView.vue"),
+            },
+          ],
+        },
+      ],
     },
     {
       path: "/auth",
@@ -82,31 +82,31 @@ const router = createRouter({
         {
           path: "registro",
           name: "register",
-          component: () => import("../views/auth/RegisterView.vue")
+          component: () => import("../views/auth/RegisterView.vue"),
         },
         {
           path: "confirmar-cuenta/:token",
           name: "confirm-account",
-          component: () => import("../views/auth/ConfirmAccountView.vue")
+          component: () => import("../views/auth/ConfirmAccountView.vue"),
         },
         {
           path: "login",
           name: "login",
-          component: () => import("../views/auth/LoginView.vue")
+          component: () => import("../views/auth/LoginView.vue"),
         },
         {
           path: "olvide-password",
           name: "forgot-password",
-          component: () => import("../views/auth/ForgotPasswordView.vue")
+          component: () => import("../views/auth/ForgotPasswordView.vue"),
         },
         {
           path: "olvide-password/:token",
           name: "new-password",
-          component: () => import("../views/auth/NewPasswordView.vue")
-        }
-      ]
-    }
-  ]
+          component: () => import("../views/auth/NewPasswordView.vue"),
+        },
+      ],
+    },
+  ],
 });
 
 router.beforeEach(async (to, from, next) => {
